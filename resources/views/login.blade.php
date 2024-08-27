@@ -19,18 +19,19 @@
                         class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <form action="">
+                    <form action="{{ route('login') }}" method="post">
+                        @csrf
                         <h1 class="text-center fw-bolder">Login</h1>
-                        <!-- Email input -->
+                        <!-- username input -->
                         <div data-mdb-input-init class="form-outline mb-4">
-                            <label class="form-label">Email address</label>
-                            <input type="email"  class="form-control form-control-lg" />
+                            <label class="form-label">User Name</label>
+                            <input type="text"  name="username" class="form-control form-control-lg" />
                         </div>
 
                         <!-- Password input -->
                         <div data-mdb-input-init class="form-outline mb-4">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control form-control-lg" />
+                            <input type="password" name="password" class="form-control form-control-lg" />
                         </div>
 
                         <!-- Submit button -->
