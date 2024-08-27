@@ -10,11 +10,18 @@ class heartController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $contents = Content::with('user')->get();
+
+        // dd($contents);
+        
+        return view('dashboard.index', [
+            'contents' => $contents
+        ]);
     }
 
     public function form()
     {
+
         return view('dashboard.form');
     }
 
@@ -32,10 +39,11 @@ class heartController extends Controller
                 'user_id' => Auth::user()->id,
                 'caption' => $request->caption,
                 'likes' => $request->likes,
-                'comments' => $request->comments,9
+                'comments' => $request->comments,
+                9
             ]
         );
 
-        return redirect()->route('dahsboard')->with('success','content has been saved');
+        return redirect()->route('dahsboard')->with('success', 'content has been saved');
     }
 }

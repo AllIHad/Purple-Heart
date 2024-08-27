@@ -20,18 +20,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($contents as $content)
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td class="text-bolder">{{ $content->user->name }}</td>
+                <td class="text-bolder">{{ $content->caption }}</td>
+                <td class="text-bolder">{{ $content->likes }}</td>
+                <td class="text-bolder">{{ $content->comments }}</td>
             </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
 </x-layout>
