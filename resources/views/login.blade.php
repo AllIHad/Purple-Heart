@@ -25,13 +25,19 @@
                         <!-- username input -->
                         <div data-mdb-input-init class="form-outline mb-4">
                             <label class="form-label">User Name</label>
-                            <input type="text"  name="username" class="form-control form-control-lg" />
+                            <input type="text" name="username" class="form-control form-control-lg" />
+                            @error('username')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Password input -->
                         <div data-mdb-input-init class="form-outline mb-4">
                             <label class="form-label">Password</label>
                             <input type="password" name="password" class="form-control form-control-lg" />
+                            @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <!-- Submit button -->
