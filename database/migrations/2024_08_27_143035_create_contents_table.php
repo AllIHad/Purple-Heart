@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('socials');
             $table->string('caption');
             $table->string('likes');
             $table->string('comments');
+            $table->string('link');
             $table->timestamps();
         });
     }
